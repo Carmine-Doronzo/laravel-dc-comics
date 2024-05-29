@@ -20,10 +20,10 @@ Route::get('/', function () {
 
 Route::get('/comics', [ComicPageController::class, 'index'])->name('comics.index');
 
-// create (deve stare prima della show)
+
 Route::get('/comics/create', [ComicPageController::class, 'create'])->name('comics.create');
 
-// show
+
 Route::get('/comics/{comic}', [ComicPageController::class, 'show'])->name('comics.show');
 
 
