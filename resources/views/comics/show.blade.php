@@ -9,7 +9,7 @@
     
     <div class="container">
         <div class="row">
-            <ul class="card list-unstyled d-flex align-items-center">
+            <ul class="card list-unstyled d-flex align-items-center py-4">
                 <li class="card-header">
                     <img  src="{{$comic->thumb}}" alt="">
                 </li>
@@ -20,15 +20,40 @@
                 <li>Prezzo: {{ $comic->price }}</li>
                 <li>
 
-                  <div>
+                  <div class="d-flex gap-2 py-4" id="form">
                     <a class="btn btn-success" href="{{ route('comics.edit',$comic) }}">Modifica</a>
-                    <form action="{{ route('comics.destroy',$comic) }}" method="POST">
-                      @method('DELETE')
-                      @csrf
-      
-                      <button class="btn btn-danger">Trash</button>
-      
-                    </form>
+                    <button class="btn btn-danger" id="delete">Trash</button>
+                    
+                    <script>
+                      let trash = document.getElementById('delete')
+
+                      trash.addEventListener('click', function () {
+
+                        let form = document.getElementById('form')
+
+                        let prova = confirm('Sei sicuro di volere eliminare?')
+                        if (prova === true) {
+
+                          form.innerHTML += 
+                          `
+                            <form action="{{ route('comics.destroy',$comic) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+
+                            
+       
+                            <button type="submit" style="display:none;" id='confirm'>trash</button>
+
+                            </form>
+                          `
+                          let confirm = document.getElementById('confirm').click()
+
+                        }
+
+
+                      })
+                    </script>
+                    
                   </div>
 
                 </li>
@@ -45,6 +70,7 @@
       <a class="btn btn-primary" href="{{ route('comics.index') }}">torna a comics</a>
     </div>
   </section>
+ 
 </main>
 
 @endsection
