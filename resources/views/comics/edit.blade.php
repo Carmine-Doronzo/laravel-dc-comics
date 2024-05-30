@@ -52,7 +52,7 @@
 
         <div class="mb-3">
           <label for="description" class="form-label">Descrizione</label>
-          <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrizione del comic" value="{{$comic->description}}"></textarea>
+          <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrizione del comic">{{$comic->description}}</textarea>
         </div>
         
         <button class="btn btn-primary">modifica</button>

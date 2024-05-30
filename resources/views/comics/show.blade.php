@@ -22,6 +22,13 @@
 
                   <div>
                     <a class="btn btn-success" href="{{ route('comics.edit',$comic) }}">Modifica</a>
+                    <form action="{{ route('comics.destroy',$comic) }}" method="POST">
+                      @method('DELETE')
+                      @csrf
+      
+                      <button class="btn btn-danger">Trash</button>
+      
+                    </form>
                   </div>
 
                 </li>
