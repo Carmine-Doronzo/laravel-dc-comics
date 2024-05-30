@@ -18,6 +18,13 @@
                 <li>serie: {{ $comic->series }}</li>
                 <li>Data di rilascio: {{ $comic->sales_date }}</li>
                 <li>Prezzo: {{ $comic->price }}</li>
+                <li>
+
+                  <div>
+                    <a class="btn btn-success" href="{{ route('comics.edit',$comic) }}">Modifica</a>
+                  </div>
+
+                </li>
 
             </ul>
         </div>
