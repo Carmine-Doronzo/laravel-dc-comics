@@ -10,7 +10,8 @@
         
       
             <h2 class="fs-2">Crea un nuovo comics</h2>
-            <a class="btn btn-primary w-25  href="{{ route('comics.index') }}">torna a comics</a>
+            <a class="btn btn-primary w-25" href="{{ route('comics.index') }}">torna a comics</a>
+            
         
     </div>
     <div class="container">
@@ -25,8 +26,8 @@
         </div>
 
         <div class="mb-3">
-          <label for="image" class="form-label">Url Image</label>
-          <input type="text" name="image" class="form-control" id="thumb" placeholder="http://...">
+          <label for="thumb" class="form-label">Url Image</label>
+          <input type="text" name="thumb" class="form-control" id="thumb" placeholder="http://...">
         </div>
 
         <div class="mb-3">
@@ -41,7 +42,7 @@
 
         <div class="mb-3">
           <label for="price" class="form-label">Prezzo</label>
-          <input type="text" name="weigth" class="form-control" id="price" placeholder="inserisci il prezzo">
+          <input type="text" name="price" class="form-control" id="price" placeholder="inserisci il prezzo">
         </div>
 
         <div class="mb-3">
