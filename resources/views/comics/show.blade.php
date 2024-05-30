@@ -22,17 +22,17 @@
 
                   <div class="d-flex gap-2 py-4" id="form">
                     <a class="btn btn-success" href="{{ route('comics.edit',$comic) }}">Modifica</a>
-                    <button class="btn btn-danger" id="delete">Trash</button>
+                    <button class="btn btn-danger" id="trash">Trash</button>
                     
                     <script>
-                      let trash = document.getElementById('delete')
+                      let trash = document.getElementById('trash')
 
                       trash.addEventListener('click', function () {
 
                         let form = document.getElementById('form')
 
-                        let prova = confirm('Sei sicuro di volere eliminare?')
-                        if (prova === true) {
+                        let trashConf = confirm('Sei sicuro di volere eliminare?')
+                        if (trashConf === true) {
 
                           form.innerHTML += 
                           `
